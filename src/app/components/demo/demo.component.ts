@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DemoComponent implements OnInit {
   title="Hello from BridgeLabz";
-
+  imgURL = "../assets/BridgeLabz-2.jpg";
   ngOnInit(): void {
   }
 
