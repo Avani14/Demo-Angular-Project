@@ -10,13 +10,19 @@ export class DemoComponent implements OnInit {
   imgURL = "../assets/BridgeLabz-2.jpg";
   linkToWebPage = "https://www.bridgelabz.com/";
   target="_blank";
-  name:string=""
+  name:string="";
+  nameError:string="";
   ngOnInit(): void {
   }
   onClickImage($event:any){
     window.open(this.linkToWebPage,"_blank");
   }
   inputHandle($event:any){
-    
+    const nameReg = RegExp("^[A-Z]{1}[a-z]{2,}$")
+    if(nameReg.test($event.target.value)){
+      this.nameError=""
+      return;
+    }
+    this.nameError="Invalid name!!";
   }
 }
