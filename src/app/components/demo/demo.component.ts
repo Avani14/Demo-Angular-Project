@@ -6,8 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./demo.component.css']
 })
 export class DemoComponent implements OnInit {
-
-  constructor() { }
+  title="Hello from BridgeLabz";
 
   ngOnInit(): void {
   }
