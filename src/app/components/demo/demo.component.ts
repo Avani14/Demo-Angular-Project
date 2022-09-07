@@ -10,10 +10,13 @@ export class DemoComponent implements OnInit {
   imgURL = "../assets/BridgeLabz-2.jpg";
   linkToWebPage = "https://www.bridgelabz.com/";
   target="_blank";
+  name:string=""
   ngOnInit(): void {
   }
   onClickImage($event:any){
     window.open(this.linkToWebPage,"_blank");
   }
-
+  inputHandle($event:any){
+    
+  }
 }
