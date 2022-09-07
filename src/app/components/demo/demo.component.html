@@ -1,4 +1,9 @@
 <img [src]=imgURL alt="logo" (click)="onClickImage($event)">
 
 <h1>Hello {{this.name}} from BridgeLabz</h1>
-<input [(ngModel)]="name">
+<div class="inputField col-3">
+    <input (input)="inputHandle($event)" [(ngModel)]="name" />
+    <span class="error">
+        {{this.nameError}}
+    </span>
+</div>
