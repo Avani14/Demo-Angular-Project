@@ -9,9 +9,13 @@ export class DemoComponent implements OnInit {
   title="Hello from BridgeLabz";
   imgURL = "../assets/BridgeLabz-2.jpg";
   linkToWebPage = "https://www.bridgelabz.com/";
+  isFirstName = false;
+  make = "Shikamaru"
   target="_blank";
   name:string="";
   nameError:string="";
+  animeCharacters = ["Itadori","Sasuke","Itachi","Kakashi"]
+  
   ngOnInit(): void {
   }
   onClickImage($event:any){

@@ -1,0 +1,25 @@
+<div class="container">
+    <label for="uname">Enter User Name: </label>
+    <input type="text" placeholder="eg: Avani" #uname>
+    <button mat-button color="primary" (click)="showUser(uname)">Submit</button>
+    <mat-icon (click)="deleteUser()">delete</mat-icon>
+
+    <mat-list  class = "list" *ngIf="userListNotEmpty"> 
+        <h2>Users</h2>
+        <mat-list-item *ngFor="let user of users">
+            <h3 matLine> {{user.name}} </h3>
+        </mat-list-item>
+    </mat-list>
+    <div [ngSwitch]="make">
+        <!-- <h2 *ngSwitchCase="'Roses'">Roses</h2>
+        <h2 *ngSwitchCase="'Tulip'">Tulip</h2>
+        <h2 *ngSwitchCase="'Lavender'">Lavender</h2>
+        <h2 *ngSwitchCase="'Orchid'">Orchid</h2>
+        <h2 *ngSwitchDefault>Not Found</h2> -->
+        <img *ngSwitchCase="'Orchid'" [src]=Orchid alt="">
+        <img *ngSwitchCase="'Tulip'" [src]=Tulip alt="">
+        <img *ngSwitchCase="'Lavender'" [src]=Lavender alt="">
+        <img *ngSwitchCase="'Roses'" [src]=Roses alt="">
+        <img *ngSwitchDefault="'Orchid'" [src]=Orchid alt="">
+    </div>
+</div>
