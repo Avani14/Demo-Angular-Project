@@ -8,11 +8,19 @@ import { Component, OnInit } from '@angular/core';
 export class DirectivesDemoComponent implements OnInit {
   users : any[] = [];
   userListNotEmpty=false;
-  showUser(uname:any){
+  make = "";
+  showUser(uname:any,flower:any){
+    if(uname.value.length == 0){
+      alert("Please enter valid name")
+      return
+    }
     this.users.push({
       name:uname.value
     })
+    uname.value = ""
+    flower.value=""
     this.userListNotEmpty=true
+    this.make = flower.value
   }
   Orchid = "../assets/Orchid.jpg";
   
@@ -21,7 +29,6 @@ export class DirectivesDemoComponent implements OnInit {
   Tulip = "../assets/Tulip.png";
   
   Lavender = "../assets/Lavender.png";
-  make = "Tulip"
   deleteUser(){
     this.users.splice(this.users.length -1)
     if (this.users.length == 0){

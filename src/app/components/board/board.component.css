@@ -1,0 +1,13 @@
+
+.btn { 
+    width: 90%;
+    height: 90%;
+    font-size: 60px;
+    background-color: white; 
+    border: none;
+}
+.btn:hover{
+    background-color: grey; 
+    animation: bounce;
+    animation-duration: 2s;
+}

@@ -1,0 +1,58 @@
+<mat-card>
+    <mat-card-title>Registration</mat-card-title>
+    <mat-card-content>
+        <form (ngSubmit)="onSubmit()" #Form="ngForm">
+            <mat-form-field appearance="standard">
+                <mat-label for="name">Enter your name: </mat-label>
+                <input matInput type="text" #userName="ngModel" ngModel name="u_name" required
+                    pattern="^[A_Z]{1}[a-z]{2,}$">
+                <mat-error *ngIf="!userName.valid && userName.touched">
+                    Please enter valid user name
+                </mat-error>
+            </mat-form-field><br><br>
+            <mat-form-field appearance="standard">
+                <mat-label for="phone_number">Enter your phone number: </mat-label>
+                <input matInput type="number" #number="ngModel" ngModel name="u_number" required
+                    pattern="(91)?[7-9]{1}[0-9]{9}">
+                <mat-icon matSuffix>phone</mat-icon>
+                <mat-error *ngIf="!number.valid && number.touched">
+                    Please enter valid phone number
+                </mat-error>
+            </mat-form-field><br><br>
+            <mat-form-field appearance="standard">
+                <mat-label for="address">Enter your address: </mat-label>
+                <input matInput type="text" #address="ngModel" ngModel name="u_address" required>
+                <mat-icon matSuffix>book</mat-icon>
+                <mat-error *ngIf="!address.valid && address.touched">
+                    Please enter valid phone address
+                </mat-error>
+            </mat-form-field><br><br>
+            <button [disabled]="!Form.valid" mat-raised-button color="primary" type="submit">Submit</button>
+            <button (click)="Form.reset()" mat-raised-button color="accent" type="reset">Reset</button>
+        </form>
+    </mat-card-content>
+</mat-card>
+<mat-list class="u_list" *ngIf="userNotNull">
+    <button [disabled]="!users" mat-raised-button color="warn" type="submit" (click)="removeElements()">Remove</button>
+    <h2>User Names</h2>
+    <mat-list-item *ngFor="let user of users">
+        <h3>{{user.u_name  }}  </h3>
+    </mat-list-item>
+</mat-list>
+
+<!-- <table mat-table [dataSource] = "users" > 
+    <ng-container matColumnDef = "name">
+       <th mat-header-cell *matHeaderCellDef>Name</th>
+       <td mat-cell *matCellDef = "let element"> {{element.u_name}} </td>
+    </ng-container>
+    <ng-container matColumnDef = "phone number">
+       <th mat-header-cell *matHeaderCellDef>Phone Number</th>
+       <td mat-cell *matCellDef = "let element"> {{element.u_number}} </td>
+    </ng-container>
+    <ng-container matColumnDef = "address">
+       <th mat-header-cell *matHeaderCellDef>Address</th>
+       <td mat-cell *matCellDef = "let element"> {{element.u_address}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef = "displayColumns"></tr>
+    <tr mat-row *matRowDef = "let row; columns: displayColumns;users"></tr>
+ </table> -->

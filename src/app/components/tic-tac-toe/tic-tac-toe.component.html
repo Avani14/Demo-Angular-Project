@@ -1,0 +1,14 @@
+<div  [ngStyle]="newGameStyle" class="container">
+    <h2 class="start-header" *ngIf="newPage">TIC-TAC-TOE</h2>
+    <h1 [ngStyle]="winnerStyle" *ngIf="!winner && !draw && !newPage">Current Player: {{player}}</h1>
+    <button ng-click="displayLeadPlayer = !displayLeadPlayer" class="getTheLead" (click) = "getThePlayerInLead()" *ngIf="!winner && !draw && !newPage">Who is in lead?</button>
+    <h2 class="getTheLead" *ngIf="displayLeadPlayer && !winner && !draw">{{playerInLead}}</h2>
+    <h2 *ngIf="winner">Player {{winner}} won!!</h2>
+    <h2 *ngIf="draw"> Draw!!</h2>
+    <br><br><br>
+    <button  *ngIf="draw || winner || newPage"  (click)="newGame()">{{buttonName}}</button>
+    <main  [ngStyle]="winnerBox" *ngIf="!winner && !draw">
+        <app-board  *ngFor="let val of squares;let i = index" [value]="val"
+         (click)="makeMove(i)"></app-board>
+    </main>
+</div>
