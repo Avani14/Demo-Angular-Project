@@ -1,0 +1,29 @@
+.ng-invalid.ng-touched{
+    border-color: red;
+}
+.ng-valid{
+    border-color: green;
+}
+.error-block{
+    color: red;
+}
+mat-card{
+    text-align: center;
+    display: block;
+    border:  2px;
+    border-radius: 20px;
+    width:50%;
+    margin-top: 5%;
+    margin-left: 25%;
+}
+mat-card:hover{
+    box-shadow: 5px 10px #888888;
+}
+.u_list{
+    margin-top: 20px;
+    text-align: left;
+    outline: dashed 2px black;
+}
+.mat-raised-button{
+    margin-left: 12px;
+}

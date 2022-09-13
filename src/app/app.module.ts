@@ -9,12 +9,24 @@ import { DirectivesDemoComponent } from './components/directives-demo/directives
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input'
 import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from "@angular/material/card";
+import {MatTableModule} from '@angular/material/table';
+import { MatRadioModule } from '@angular/material/radio';
+import { TemplateDrivenFormComponent } from './components/template-driven-form/template-driven-form.component';
+import { TicTacToeComponent } from './components/tic-tac-toe/tic-tac-toe.component';
+import { BoardComponent } from './components/board/board.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     DemoComponent,
-    DirectivesDemoComponent
+    DirectivesDemoComponent,
+    TemplateDrivenFormComponent,
+    TicTacToeComponent,
+    BoardComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +35,8 @@ import { MatListModule } from '@angular/material/list';
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatInputModule,MatCardModule,MatTableModule,MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

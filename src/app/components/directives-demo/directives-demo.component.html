@@ -1,9 +1,10 @@
 <div class="container">
     <label for="uname">Enter User Name: </label>
     <input type="text" placeholder="eg: Avani" #uname>
-    <button mat-button color="primary" (click)="showUser(uname)">Submit</button>
+    <label for="picture">Enter your flower: </label>
+    <input type="text" placeholder="eg: Roses" name="flower" #flower>
+    <button mat-button color="primary" (click)="showUser(uname,flower)">Submit</button>
     <mat-icon (click)="deleteUser()">delete</mat-icon>
-
     <mat-list  class = "list" *ngIf="userListNotEmpty"> 
         <h2>Users</h2>
         <mat-list-item *ngFor="let user of users">
